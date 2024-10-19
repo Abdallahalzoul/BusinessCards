@@ -1,0 +1,27 @@
+<div class="container mt-5 d-flex justify-content-center">
+  <div class="card business-card">
+
+    <img [src]="displayImageUrl" class="card-img-top" alt="Image">
+    <div class="card-body text-center">
+
+      <h4 class="card-title">{{ displayName }}</h4>
+
+
+      <p><strong>Gender:</strong> {{ displayGender }}</p>
+
+
+      <p><strong>Age:</strong> {{ displayAge }}</p>
+
+      <p class="card-text contact-info">
+
+        <strong>Phone:</strong> {{ displayPhone }} <br>
+
+
+        <strong>Email:</strong> {{ displayEmail }} <br>
+
+
+        <strong>Address:</strong> {{ displayAddress }}
+      </p>
+    </div>
+  </div>
+</div>

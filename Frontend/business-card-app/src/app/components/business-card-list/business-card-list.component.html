@@ -1,0 +1,155 @@
+<form (ngSubmit)="onFilterSubmit()" [formGroup]="filterForm" class="mb-3">
+  <div class="row g-3 mt-3">
+    <div class="col-sm-6">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Name"
+        aria-label="Name"
+        formControlName="name"
+      />
+    </div>
+    <div class="col-sm-6">
+      <input
+        type="date"
+        class="form-control"
+        placeholder="Date of Birth"
+        aria-label="DOB"
+        formControlName="dob"
+      />
+    </div>
+  </div>
+  <div class="row g-3 mt-3">
+    <div class="col-sm-6">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Phone"
+        aria-label="Phone"
+        formControlName="phone"
+      />
+    </div>
+    <div class="col-sm-6">
+      <input
+        type="email"
+        class="form-control"
+        placeholder="Email"
+        aria-label="Email"
+        formControlName="email"
+      />
+    </div>
+  </div>
+  <div class="row g-3 mt-3">
+    <div class="col-sm-6">
+      <select
+        class="form-select"
+        aria-label="Gender"
+        formControlName="gender"
+      >
+        <option value="">Select Gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+    </div>
+    <div class="col-sm-6 d-flex align-items-end">
+      <button type="submit" class="btn btn-primary me-2">Filter</button>
+      <button type="button" class="btn btn-secondary" (click)="clearFilters()">Clear Filters</button>
+    </div>
+  </div>
+</form>
+
+<div class="card border-0">
+  <div class="card-body">
+    <div class="card-header mt-3 mb-3">
+      <div *ngIf="!isLoading" class="d-flex justify-content-between">
+        <div>
+
+          <button
+            (click)="exportBusinessCardsAsCsv()"
+            class="btn btn-primary me-2"
+            title="Export as CSV"
+          >
+            <i class="fas fa-file-csv"></i>
+
+          </button>
+
+          <button
+            (click)="exportBusinessCardsAsXml()"
+            class="btn btn-secondary"
+            title="Export as XML"
+          >
+            <i class="fas fa-file-code"></i>
+
+          </button>
+        </div>
+        <div>
+          <button
+            class="btn btn-primary"
+            routerLink="/bsa/add"
+            title="Add New Card"
+          >
+            <i class="fas fa-plus-circle"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="isLoading">Loading business cards...</div>
+
+
+    <div *ngIf="!isLoading && businessCards.length === 0">
+      No business cards found.
+    </div>
+
+
+    <table
+      *ngIf="!isLoading && businessCards.length > 0"
+      class="table table-striped"
+    >
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Gender</th>
+          <th>Date of Birth</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Address</th>
+          <th>Photo</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let card of businessCards">
+          <td>{{ card.name }}</td>
+          <td>{{ card.gender }}</td>
+          <td>{{ card.dateOfBirth | date : "yyyy-MM-dd" }}</td>
+          <td>{{ card.email }}</td>
+          <td>{{ card.phone }}</td>
+          <td>{{ card.address }}</td>
+          <td>
+            <img
+              [src]="
+                card.photoBase64
+                  ? 'data:image/jpeg;base64,' + card.photoBase64
+                  : 'https://via.placeholder.com/100x100'
+              "
+              class="img-thumbnail"
+              alt="Photo"
+              width="100"
+              height="100"
+            />
+          </td>
+          <td>
+            <button
+              (click)="deleteBusinessCard(card.id)"
+              class="btn btn-danger"
+              title="Delete"
+            >
+              <i class="fas fa-trash"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

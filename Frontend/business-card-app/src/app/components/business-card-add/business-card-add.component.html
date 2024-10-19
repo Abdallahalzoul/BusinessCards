@@ -1,0 +1,149 @@
+<div class="container mt-4">
+  <h2 class="text-center mb-4">Add New Business Card</h2>
+  <div class="row">
+
+    <div class="col-md-6">
+      <form (submit)="addBusinessCard()" class="form-horizontal">
+
+        <div class="form-group row mb-3">
+          <label for="name" class="col-sm-3 col-form-label">Name:</label>
+          <div class="col-sm-9">
+            <input
+              type="text"
+              [(ngModel)]="businessCard.name"
+              name="name"
+              class="form-control"
+              id="name"
+              placeholder="Enter Name"
+              required
+            />
+          </div>
+        </div>
+
+
+        <div class="form-group row mb-3">
+          <label for="gender" class="col-sm-3 col-form-label">Gender:</label>
+          <div class="col-sm-9">
+            <select
+              [(ngModel)]="businessCard.gender"
+              name="gender"
+              class="form-control"
+              id="gender"
+              required
+            >
+              <option value="">Select Gender</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="form-group row mb-3">
+          <label for="dateOfBirth" class="col-sm-3 col-form-label">Date of Birth:</label>
+          <div class="col-sm-9">
+            <input
+              type="date"
+              [(ngModel)]="businessCard.dateOfBirth"
+              name="dateOfBirth"
+              class="form-control"
+              id="dateOfBirth"
+              required
+            />
+          </div>
+        </div>
+
+
+        <div class="form-group row mb-3">
+          <label for="phone" class="col-sm-3 col-form-label">Phone:</label>
+          <div class="col-sm-9">
+            <input
+              type="text"
+              [(ngModel)]="businessCard.phone"
+              name="phone"
+              class="form-control"
+              id="phone"
+              placeholder="Enter Phone Number"
+              required
+            />
+          </div>
+        </div>
+
+
+        <div class="form-group row mb-3">
+          <label for="email" class="col-sm-3 col-form-label">Email:</label>
+          <div class="col-sm-9">
+            <input
+              type="email"
+              [(ngModel)]="businessCard.email"
+              name="email"
+              class="form-control"
+              id="email"
+              placeholder="Enter Email Address"
+              required
+            />
+          </div>
+        </div>
+
+
+        <div class="form-group row mb-3">
+          <label for="address" class="col-sm-3 col-form-label">Address:</label>
+          <div class="col-sm-9">
+            <input
+              type="text"
+              [(ngModel)]="businessCard.address"
+              name="address"
+              class="form-control"
+              id="address"
+              placeholder="Enter Address"
+              required
+            />
+          </div>
+        </div>
+
+
+        <div class="form-group row mb-4">
+          <label for="image" class="col-sm-3 col-form-label">Image:</label>
+          <div class="col-sm-9">
+            <div>
+               <input
+                type="file"
+                (change)="handleFileInput($event)"
+                class="form-control-file"
+                id="image"
+              />
+            </div>
+          </div>
+        </div>
+
+
+        <div class="form-group row">
+          <div class="col-sm-9 offset-sm-3">
+            <button type="submit" class="btn btn-primary">Add Business Card</button>
+            <a routerLink="/bsa/list" class="btn btn-secondary ms-2">Back to List</a>
+          </div>
+        </div>
+      </form>
+    </div>
+
+
+    <div class="col-md-6">
+
+      <app-business-card-preview
+      [name]="businessCard.name"
+      [gender]="businessCard.gender"
+      [dateOfBirth]="businessCard.dateOfBirth"
+      [phone]="businessCard.phone"
+      [email]="businessCard.email"
+      [address]="businessCard.address"
+      [imageUrl]="previewUrl"
+    ></app-business-card-preview>
+    </div>
+  </div>
+
+
+
+
+
+
+</div>
