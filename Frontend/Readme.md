@@ -44,11 +44,8 @@ The maximum allowed file size for uploading is 1 MB. Ensure that the uploaded fi
 
 ## Installation and Setup
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/your-repo/business-card-app.git
-   cd business-card-app
-   ```
+1. **Download the repository**
+ 
 2. Install dependencies:
     ```bash
    npm install
