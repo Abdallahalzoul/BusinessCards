@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "j2Q8DK+e4UJ2xAq1osIhYHCQy8lGinKrXb4wClklAAPItVDWJhGewtZFsTzcU90wTJa8f/1+6xtoR6iaBn6dvA==",
+  "success": true,
+  "projectFilePath": "D:\\ProgressSoft\\BusinessCards\\Domain\\Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Abdallah Alzoul\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
+    "C:\\Users\\Abdallah Alzoul\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
+    "C:\\Users\\Abdallah Alzoul\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\Abdallah Alzoul\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
+    "C:\\Users\\Abdallah Alzoul\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "C:\\Users\\Abdallah Alzoul\\.nuget\\packages\\system.io.pipelines\\5.0.2\\system.io.pipelines.5.0.2.nupkg.sha512",
+    "C:\\Users\\Abdallah Alzoul\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
